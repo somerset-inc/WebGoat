@@ -18,7 +18,7 @@ import java.net.http.HttpResponse;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class EchoController {
+public class MyAPIEndpoint {
 
     @SneakyThrows
     @GetMapping("/echo")
