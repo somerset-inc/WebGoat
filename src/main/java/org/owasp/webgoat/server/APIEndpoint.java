@@ -40,7 +40,7 @@ public class APIEndpoint {
 
     @SneakyThrows
     @GetMapping("/ssrf3")
-    public void makeRequest2(@RequestParam String url) {
+    public void makeRequest3(@RequestParam String url) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(url))
