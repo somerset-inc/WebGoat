@@ -23,7 +23,7 @@ def index():
     """
     username = request.args.get('username') 
     password = request.args.get('password') 
-    query = f'INSERT INTO users (username, password) VALUES ({username}, {password})'
+    query = "INSERT INTO users (username, password) VALUES (?, ?)"
 
     db = sqlite3.connect(
             app.config['DATABASE'],
@@ -32,6 +32,6 @@ def index():
     
     # execute query
     cursor = db.cursor()
-    cursor.execute(query)
+    cursor.execute(query, (username, password))
     db.commit()
     return {"msg": "success"}
